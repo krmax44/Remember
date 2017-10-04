@@ -1,0 +1,63 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/materialize.css">
+    <link rel="stylesheet" href="css/material-icons.css">
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        
+        #editor {
+            height: 100%;
+            width: 100%;
+        }
+
+    </style>
+	<title>Editor</title>
+</head>
+
+<body>
+    <div id="editor"></div>
+    
+    <div class="fixed-action-btn">
+        <a class="btn-floating btn-large waves-effect waves-light amber modal-trigger" href="#settings"><i class="material-icons">settings</i></a>
+    </div>
+    
+    <div class="modal modal-fixed-footer" id="settings">
+        <div class="modal-content" style="height: 100%">
+            <h4>Set language</h4>
+            <select id="language">
+                <option value="batchfile">Batch</option>
+                <option value="css">CSS</option>
+                <option value="haml">HAML</option>
+                <option value="html">HTML</option>
+                <option value="java">Java</option>
+                <option value="javascript">Javascript</option>
+                <option value="json">JSON</option>
+                <option value="less">LESS</option>
+                <option value="makefile">Makefile</option>
+                <option value="markdown">Markdown</option>
+                <option value="mysql">MySQL</option>
+                <option value="perl">Perl</option>
+                <option value="php">PHP</option>
+                <option value="plain_text">Plain Text</option>
+                <option value="powershell">Powershell</option>
+                <option value="python">Python</option>
+                <option value="sql">SQL</option>
+                <option value="xml">XML</option>
+                <option value="yaml">YAML</option>
+            </select>
+        </div>
+    </div>
+    
+    <script src="js/ace/ace.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/materialize.min.js"></script>
+    <script src="js/remember/app.js"></script>
+    <script src="js/remember/item-handler.js"></script>
+    <script src="js/remember/editor.js"></script>
+</body>
+
+</html>

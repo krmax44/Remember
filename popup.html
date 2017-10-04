@@ -1,0 +1,104 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/materialize.css">
+    <link rel="stylesheet" href="css/material-icons.css">
+    <meta charset="utf-8">
+    <title>Remember</title>
+</head>
+
+<body>
+    <nav class="indigo">
+        <div class="nav-wrapper">
+            <form>
+                <div class="input-field">
+                    <input id="search" type="search" required placeholder="Search Remember...">
+                </div>
+            </form>
+        </div>
+    </nav>
+
+    <div class="remembers-container">
+        <div class="grid-wrapper">
+        </div>
+    </div>
+    
+    <div class="fixed-action-btn toolbar">
+        <a class="btn-floating btn-large indigo">
+            <i class="large material-icons">more_horiz</i>
+        </a>
+        <ul>
+            <li class="waves-effect waves-light"><a class="modal-trigger" href="#add-url"><i class="material-icons">link</i></a></li>
+            <li class="waves-effect waves-light"><a class="modal-trigger" href="#add-code"><i class="material-icons">code</i></a></li>
+            <li class="waves-effect waves-light"><a class="modal-trigger" href="popup.html" target="_blank"><i class="material-icons">open_in_new</i></a></li>
+            <li class="waves-effect waves-light"><a class="modal-trigger" href="#settings"><i class="material-icons">settings</i></a></li>
+        </ul>
+    </div>
+    
+    <!-- MODALS -->
+    
+    <!-- add URL modal -->
+    
+    <div class="modal" id="add-url">
+        <div class="modal-content">
+            <h4>Add URL</h4>
+            <input type="url" id="add-url-input" placeholder="https://...">
+            <div class="chips" id="add-url-tags"></div>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" id="add-url-btn" class="btn-flat btn-block waves-effect waves-light modal-action modal-close">Add</a>
+        </div>
+    </div>
+    
+    <!-- add code modal -->
+    
+    <div class="modal" id="add-code">
+        <div class="modal-content">
+            <h4>Add snippet</h4>
+            <input type="text" id="add-code-name" placeholder="Snippet name">
+            <input type="text" id="add-code-description" placeholder="Snippet description">
+            <div class="chips" id="add-code-tags"></div>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" id="add-code-btn" class="btn-flat btn-block waves-effect waves-light modal-action modal-close">Add</a>
+        </div>
+    </div>
+    
+    <!-- settings modal -->
+    
+    <div class="modal" id="settings">
+        <div class="modal-content">
+            <h4>Settings</h4>
+            <br>
+            <div class="input-field"> 
+                <select class="setting" data-key="sort" data-onchange="orderItems">
+                    <option value="oldtonew">Old to new</option>
+                    <option value="newtoold">New to old</option>
+                    <option value="atoz">A to Z</option>
+                    <option value="ztoa">Z to A</option>
+                </select>
+                <label>Sort...</label>
+            </div>
+            <div class="grid-wrapper" style="grid-template-columns: 1fr 1fr;">
+                <a href="#!" class="export-json btn indigo waves-effect waves-light">Export JSON</a>
+                <a href="#!" class="import-json btn indigo waves-effect waves-light">Import JSON</a>
+                <input type="file" class="import-json-file" style="display:none;">
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="btn-flat btn-block waves-effect waves-light modal-action modal-close">Close</a>
+        </div>
+    </div>
+    
+    <script src="js/jquery.min.js"></script>
+    <script src="js/materialize.min.js"></script>
+    <script src="js/jquery.tinysort.min.js"></script>
+    <script src="js/filesaver.min.js"></script>
+    <script src="js/remember/app.js"></script>
+    <script src="js/remember/settings-handler.js"></script>
+    <script src="js/remember/item-handler.js"></script>
+    <script src="js/remember/item-parser.js"></script>
+    <script src="js/remember/main-view.js"></script>
+</body>
+
+</html>
